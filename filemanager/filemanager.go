@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"os"
+	"time"
 )
 
 type FileManager struct {
@@ -18,6 +19,8 @@ func (fm FileManager) ReadLines() ([]string, error) {
 	if err != nil {
 		return nil, errors.New("Failed to open file.")
 	}
+
+	time.Sleep(3 * time.Second)
 
 	scanner := bufio.NewScanner(file)
 
